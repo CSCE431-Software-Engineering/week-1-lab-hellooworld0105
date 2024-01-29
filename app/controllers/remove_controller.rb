@@ -1,4 +1,3 @@
-require 'pg'
 class RemoveController < ApplicationController
   def remove
     @title = params[:title]
@@ -13,7 +12,7 @@ class RemoveController < ApplicationController
         flash[:notice] = "Removed book: #{title}"
         redirect_to '/'
     rescue
-        flash[:notice] = "Error in deleting book, please try again"
+        flash[:notice] = "Error in Removing"
         redirect_to "/remove/#{title}"
     end
   end
