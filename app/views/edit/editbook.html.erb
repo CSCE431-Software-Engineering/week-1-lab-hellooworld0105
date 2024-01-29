@@ -1,0 +1,16 @@
+<a href = "/"> <-- Back To Homepage </a>
+<%  if flash[:notice] %>
+  <h3><%=flash[:notice]%></h3>
+<% end %>
+
+<h3> ~Update Book Info~ </h3>
+
+<%= form_tag("/edit/#{@urltitle}") do %>
+    <label for="newtitle">Title:</label>
+    <%= text_field_tag(:newtitle, @book[0]['title'], placeholder: 'Title', style: 'margin-bottom:2%; margin-top:2%', required: 'true') %>
+    <br>
+    
+    
+    <%= submit_tag("Update Book") %>
+<% end %>
+<button onclick = "window.location.href = '/'" style = "margin-top:1%" >Cancel</button>
