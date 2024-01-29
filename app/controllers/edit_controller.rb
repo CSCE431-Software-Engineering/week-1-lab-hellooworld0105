@@ -19,6 +19,7 @@ class EditController < ApplicationController
     def edit
         title = params[:newtitle]
         
+        
         book = Book.where(:title => @@book[0]['title'])
 
         book.update(:title => title)
